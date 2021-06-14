@@ -40,3 +40,19 @@
 var twoSum = function(nums, target) {
     
 };
+
+
+
+//Testcase
+
+function testCase(nums, target) {
+  //First Case
+  var firstTest = twoSum(nums, target);
+  console.log("********** Testing **********");
+  console.log("Input: nums = [" + nums + "] target = " + target);
+  console.log("Output: ", firstTest);
+  console.log("Expected: ", target)
+  firstTest == 9 ? console.log("******** Test Passed ***********") : console.log("******** Test Failed ***********")
+}
+
+testCase([2,7,11,15], 9)
