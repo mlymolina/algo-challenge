@@ -41,18 +41,17 @@ var twoSum = function(nums, target) {
     
 };
 
-
-
 //Testcase
 
-function testCase(nums, target) {
-  //First Case
-  var firstTest = twoSum(nums, target);
-  console.log("********** Testing **********");
+function testCase(nums, target, expected) {
+  var twoSumResult = twoSum(nums, target);
+  console.log("\n********** Testing **********");
   console.log("Input: nums = [" + nums + "] target = " + target);
-  console.log("Output: ", firstTest);
-  console.log("Expected: ", target)
-  firstTest == 9 ? console.log("******** Test Passed ***********") : console.log("******** Test Failed ***********")
+  console.log("Output: ", twoSumResult);
+  console.log("Expected: ", expected);
+  JSON.stringify(twoSumResult) == JSON.stringify(expected) ? console.log("******** Test Passed ***********\n") : console.log("******** Test Failed ***********\n")
 }
 
-testCase([2,7,11,15], 9)
+testCase([2,7,11,15], 9, [0,1]);
+testCase([3,2,4], 6, [1,2]);
+testCase([3,3], 6, [0,1]);
