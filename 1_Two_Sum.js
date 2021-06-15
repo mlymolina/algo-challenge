@@ -38,7 +38,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    
+  for(let i = 0; i < nums.length; i++){
+   for(let j = i+1; j < nums.length; j++ ){
+     if(nums[i] + nums[j] == target){
+       return [i, j]
+     }
+   }
+  }
+
 };
 
 //Testcase
@@ -52,6 +59,5 @@ function testCase(nums, target, expected) {
   JSON.stringify(twoSumResult) == JSON.stringify(expected) ? console.log("******** Test Passed ***********\n") : console.log("******** Test Failed ***********\n")
 }
 
-testCase([2,7,11,15], 9, [0,1]);
-testCase([3,2,4], 6, [1,2]);
-testCase([3,3], 6, [0,1]);
+// testCase([2,7,11,15], 9, [0,1]);
+// testCase([3,2,4], 6, [1,2]);
