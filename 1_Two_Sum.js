@@ -21,7 +21,6 @@
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
  
-
 // Constraints:
 
 // 2 <= nums.length <= 104
@@ -38,7 +37,17 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    
+  if (nums == null || nums.length < 2) return [];
+
+  for (let i=0; i<nums.length-1; i++) {
+    for (let j=i+1; j<nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j]
+      }
+    }
+  }
+
+  return [];
 };
 
 //Testcase
@@ -49,7 +58,9 @@ function testCase(nums, target, expected) {
   console.log("Input: nums = [" + nums + "] target = " + target);
   console.log("Output: ", twoSumResult);
   console.log("Expected: ", expected);
-  JSON.stringify(twoSumResult) == JSON.stringify(expected) ? console.log("******** Test Passed ***********\n") : console.log("******** Test Failed ***********\n")
+  JSON.stringify(twoSumResult) == JSON.stringify(expected) 
+    ? console.log("******** Test Passed ***********\n") 
+    : console.log("******** Test Failed ***********\n")
 }
 
 testCase([2,7,11,15], 9, [0,1]);
